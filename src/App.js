@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MemeList from './MemeList';
+import AddMemeForm from './AddMemeForm';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  background-color: peachpuff;
+  & > h1 {
+    color: steelblue;
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <StyledApp className="App">
+        <h1> Meme Maker!</h1>
+        <AddMemeForm />
+        <MemeList />
+      </StyledApp>
     );
   }
 }
+
+// function mapStateToProps(state) {
+//   return { memes: state.memes };
+// }
+
+// const connectToState = connect(mapStateToProps);
 
 export default App;
